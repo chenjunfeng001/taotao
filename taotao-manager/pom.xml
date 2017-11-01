@@ -24,12 +24,12 @@
   	<module>taotao-manager-web</module>
   </modules>
   <build>
-<!--   	配置插件 -->
+	<!-- 配置插件 -->
   	<plugins>
 		<plugin>
 			<groupId>org.apache.tomcat.maven</groupId>
 			<artifactId>tomcat7-maven-plugin</artifactId>
-<!-- 			运行的端口 -->
+			<!-- 运行的端口 -->
 			<configuration>
 				<port>8888</port>
 				<path>/</path>

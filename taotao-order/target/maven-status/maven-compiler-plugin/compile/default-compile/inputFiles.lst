@@ -1,7 +1,0 @@
-D:\mylx\onepiece\taotao-order\src\main\java\com\taotao\order\pojo\Order.java
-D:\mylx\onepiece\taotao-order\src\main\java\com\taotao\order\controller\OrderController.java
-D:\mylx\onepiece\taotao-order\src\main\java\com\taotao\order\dao\impl\JedisClientSingle.java
-D:\mylx\onepiece\taotao-order\src\main\java\com\taotao\order\dao\impl\JedisClientCluster.java
-D:\mylx\onepiece\taotao-order\src\main\java\com\taotao\order\service\OrderService.java
-D:\mylx\onepiece\taotao-order\src\main\java\com\taotao\order\dao\JedisClient.java
-D:\mylx\onepiece\taotao-order\src\main\java\com\taotao\order\service\impl\OrderServiceImpl.java

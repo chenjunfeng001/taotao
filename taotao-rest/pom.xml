@@ -59,8 +59,13 @@
 			<groupId>org.apache.solr</groupId>
 			<artifactId>solr-solrj</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
-  <build>
+	<build>
 		<!-- 配置插件 -->
 		<plugins>
 			<plugin>
@@ -73,5 +78,5 @@
 			</plugin>
 		</plugins>
 	</build>
-  
+
 </project>
