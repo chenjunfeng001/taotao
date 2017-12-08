@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function outPutFile() {
+			//amarExportP2P("myiframe0");
+			//获取查询条件
+			var loantype = document.getElementsByName("DOFILTER_1_1_VALUE")[0].value;//借据类型
+			var paydateStart = document.getElementsByName("DOFILTER_2_1_VALUE")[0].value;//还款日起
+			var paydateEnd = document.getElementsByName("DOFILTER_2_2_VALUE")[0].value;//还款日止
+			var overduedayStart = document
+					.getElementsByName("DOFILTER_3_1_VALUE")[0].value;//逾期天数起
+			var overduedayEnd = document
+					.getElementsByName("DOFILTER_3_2_VALUE")[0].value;//逾期天数止
+			var projectname = document.getElementsByName("DOFILTER_4_1_VALUE")[0].value;//项目名称
+			var realname = document.getElementsByName("DOFILTER_5_1_VALUE")[0].value;//借款人
+			var totalsumStart = document
+					.getElementsByName("DOFILTER_6_1_VALUE")[0].value;//还款总额起
+			var totalsumEnd = document.getElementsByName("DOFILTER_6_2_VALUE")[0].value;//还款总额止
+
+			var action = sWebRootPath
+					+ "/Frame/page/dw/GetRepaymentRemindListDataForExportFile.jsp";
+
+			var formObject = document.createElement('form');
+			document.body.appendChild(formObject);
+			formObject.setAttribute('method', 'post');
+			formObject.action = action;
+
+			var loantypeObject = document.createElement('input');
+			loantypeObject.setAttribute('type', 'hidden');
+			loantypeObject.setAttribute('name', 'loantype');
+			loantypeObject.setAttribute('value', loantype);
+			formObject.appendChild(loantypeObject);
+
+			var paydateStartObject = document.createElement('input');
+			paydateStartObject.setAttribute('type', 'hidden');
+			paydateStartObject.setAttribute('name', 'paydateStart');
+			paydateStartObject.setAttribute('value', paydateStart);
+			formObject.appendChild(paydateStartObject);
+
+			var paydateEndObject = document.createElement('input');
+			paydateEndObject.setAttribute('type', 'hidden');
+			paydateEndObject.setAttribute('name', 'paydateEnd');
+			paydateEndObject.setAttribute('value', paydateEnd);
+			formObject.appendChild(paydateEndObject);
+
+			var overduedayStartObject = document.createElement('input');
+			overduedayStartObject.setAttribute('type', 'hidden');
+			overduedayStartObject.setAttribute('name', 'overduedayStart');
+			overduedayStartObject.setAttribute('value', overduedayStart);
+			formObject.appendChild(overduedayStartObject);
+
+			var overduedayEndObject = document.createElement('input');
+			overduedayEndObject.setAttribute('type', 'hidden');
+			overduedayEndObject.setAttribute('name', 'overduedayEnd');
+			overduedayEndObject.setAttribute('value', overduedayEnd);
+			formObject.appendChild(overduedayEndObject);
+
+			var projectnameObject = document.createElement('input');
+			projectnameObject.setAttribute('type', 'hidden');
+			projectnameObject.setAttribute('name', 'projectname');
+			projectnameObject.setAttribute('value', projectname);
+			formObject.appendChild(projectnameObject);
+
+			var realnameObject = document.createElement('input');
+			realnameObject.setAttribute('type', 'hidden');
+			realnameObject.setAttribute('name', 'realname');
+			realnameObject.setAttribute('value', realname);
+			formObject.appendChild(realnameObject);
+
+			var totalsumStartObject = document.createElement('input');
+			totalsumStartObject.setAttribute('type', 'hidden');
+			totalsumStartObject.setAttribute('name', 'totalsumStart');
+			totalsumStartObject.setAttribute('value', totalsumStart);
+			formObject.appendChild(totalsumStartObject);
+
+			var totalsumEndObject = document.createElement('input');
+			totalsumEndObject.setAttribute('type', 'hidden');
+			totalsumEndObject.setAttribute('name', 'totalsumEnd');
+			totalsumEndObject.setAttribute('value', totalsumEnd);
+			formObject.appendChild(totalsumEndObject);
+
+			var exportIdObject = document.createElement('input');
+			exportIdObject.setAttribute('type', 'hidden');
+			exportIdObject.setAttribute('name', 'exportId');
+			exportIdObject.setAttribute('value', 'speWithdraw');
+			formObject.appendChild(exportIdObject);
+
+			formObject.submit();
+
+			return false;
+		}
+	</script>
+</body>
+</html>

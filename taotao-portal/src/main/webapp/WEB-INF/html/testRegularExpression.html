@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	手机号：<input type="text" name="手机号" id="phone">
+	<button id="btn" onclick="check()">save</button>
+	<script type="text/javascript">
+		function check(){
+			var enterprisename="";
+			var entaccountcontactphone=document.getElementById("phone").value;
+			var myNameReg = /^[\u4e00-\u9fa5a-zA-Z]{1}$/;
+/* 			if (!myNameReg.test(enterprisename)) {
+				alert("企业名称只能为汉字或者英文！");
+			} */
+			var myPhoneReg = /^[1][3,4,5,7,8][0-9]{9}$/;
+			alert(entaccountcontactphone);
+			alert(myPhoneReg.test(entaccountcontactphone));
+			if (!myPhoneReg.test(entaccountcontactphone)) {
+				alert("企业联系人手机号格式不正确！");
+			}
+			
+		}
+	</script>
+</body>
+</html>
