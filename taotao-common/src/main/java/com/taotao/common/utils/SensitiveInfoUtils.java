@@ -61,4 +61,31 @@ public class SensitiveInfoUtils {
 			return concat;
 		}
 	}
+
+	// 获取隐藏姓名
+	public static String getHiddenTrueName(String userType, Object truename) {
+		if (truename == null) {
+			return "";
+		}
+		String sTrueName = truename.toString();
+		int iLength = sTrueName.length();
+		String sTmp = "";
+		if ("01".equals(userType)) {
+			// 个人用户显示姓
+			for (int i = 1; i < iLength; i++) {
+				sTmp += "*";
+			}
+			sTrueName = sTrueName.substring(0, 1) + sTmp;
+
+		} else {
+			// 企业用户：前二后二显示中间隐藏
+			for (int i = 2; i < iLength - 2; i++) {
+				sTmp += "*";
+			}
+			sTrueName = sTrueName.substring(0, 2) + sTmp
+					+ sTrueName.substring(sTrueName.length() - 2, sTrueName.length());
+		}
+
+		return sTrueName;
+	}
 }
