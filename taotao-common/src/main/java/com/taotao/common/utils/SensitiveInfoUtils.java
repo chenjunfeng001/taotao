@@ -46,6 +46,15 @@ public class SensitiveInfoUtils {
 		// System.out.println(age);
 		return age + "";
 	}
+	public static String getHiddenCertid2(String certid) {
+		// 首部显示6位，尾部显示1位，中间显示为*
+		if (StringUtils.isBlank(certid)) {
+			return "";
+		}
+		String concat = StringUtils.left(certid, 6).concat(StringUtils
+				.removeStart(StringUtils.leftPad(StringUtils.right(certid, 1), StringUtils.length(certid), "*"), "*"));
+		return concat;
+	}
 
 	// 获取隐藏姓名
 	public static String getHiddenTrueName(String type, String name) {
