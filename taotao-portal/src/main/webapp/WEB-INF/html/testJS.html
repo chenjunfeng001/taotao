@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		window.onload = function() {
+			var description = '绑卡成功！';
+			alert(description);
+			
+			if (description.indexOf("成功") >= 0) {
+				//创建异步对象  
+				var xhr;
+				if (window.XMLHttpRequest) {
+					xhr = new XMLHttpRequest();
+				} else {
+					xhr = new ActiveXObject('Microsoft.XMLHTTP');
+				}
+				
+				//设置请求的类型及url
+				//post请求一定要添加请求头
+				xhr.setRequestHeader("Content-type",
+						"application/x-www-form-urlencoded");
+				var url = '';
+				xhr.open('post', url,'true');
+				//发送请求
+				xhr.send('name=fox&age=18');
+				xhr.onreadystatechange = function() {
+					// 这步为判断服务器是否正确响应
+					if (xhr.readyState == 4 && xhr.status == 200) {
+						console.log(xhr.responseText);
+					}
+				}
+			}
+			var num = description.indexOf('成功');
+			alert(num);
+			if (num >= 0) {
+				alert("包含成功字符")
+			}
+		}
+	</script>
+</body>
+</html>
+
